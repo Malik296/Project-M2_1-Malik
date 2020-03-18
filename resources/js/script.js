@@ -12,7 +12,7 @@ function callFunction() {
     let firstAmount = correctInmput(+document.getElementById('first-amoun').value);
     let mounthAmount = correctInmput(+document.getElementById('mounthly-amount').value);
     let percent = correctPercent(+document.getElementById('percent').value);
-    let days = correctInmput(+document.getElementById('days').value);
+    let days = correctDay(+document.getElementById('days').value);
 
     if (isNaN(firstAmount)) {
         alertErrorMesage('Не корректная начальная сумма!');
@@ -21,13 +21,20 @@ function callFunction() {
     } else if (isNaN(percent)) {
         alertErrorMesage('Не корректная процентная ставка!');
     } else if (isNaN(days)) {
-        alertErrorMesage('Не корректная срок вклада!');
+        alertErrorMesage('Не корректный срок вклада!');
     } else {
         closeErrorAlert();
         alert(`Ваш финальный счет: \n ${alertResult(firstAmount, mounthAmount, percent, days).toFixed(2)} `)
     }
 
     console.log(days);
+}
+
+function correctDay(days){
+    if (days != days.toFixed(0)) {
+        return NaN;
+    }
+    correctInmput(days);
 }
 
 function alertErrorMesage(mesage) {
