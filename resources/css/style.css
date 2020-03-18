@@ -53,6 +53,10 @@ label {
     font-size: 16px;
 }
 
+#action:hover {
+    background-color: rgb(79, 128, 47);
+}
+
 h2 {
     text-align: center;
 }
