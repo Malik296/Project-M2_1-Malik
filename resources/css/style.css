@@ -60,7 +60,6 @@ label {
 
 h2 {
     text-align: center;
-    /* background-color: #00a8cc; */
 }
 
 #alert {
@@ -86,7 +85,6 @@ h2 {
   .logo-img {
       position: absolute;
       right: 50px;
-    /* float: right; */
     width: 300px;
   }
 
