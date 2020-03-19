@@ -44,7 +44,8 @@ function alertErrorMesage(mesage) {
 
 function alertResult(firstAmount, mounthAmount, percent, days) {
     let result = firstAmount;
-    for (let i = 0; i < days / 30; i++) {
+
+    for (let i = 0; i < Math.trunc( days / 30); i++) {
         result *= (1 + (percent * 30) / (100 * 360));
         result += mounthAmount;
     }
