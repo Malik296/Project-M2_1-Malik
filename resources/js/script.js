@@ -12,7 +12,6 @@ function callFunction() {
     let firstAmount = correctInmput(+document.getElementById('first-amoun').value);
     let mounthAmount = correctInmput(+document.getElementById('mounthly-amount').value);
     let percent = correctPercent(+document.getElementById('percent').value);
-    // let days = correctInmput(+document.getElementById('days').value);
     let days = correctDay(+document.getElementById('days').value);
 
     if (isNaN(firstAmount)) {
