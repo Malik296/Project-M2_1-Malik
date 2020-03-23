@@ -11,26 +11,33 @@
 
 <body>
     <header>
-        <div class="logo-img"><img src="https://lh3.googleusercontent.com/proxy/XBOnQVyyz_5semM7PCLlRMMalEdJ77jvyqZndrJovK5rbE6iPyYnBwc5guOHi1-aS_3WSJtBIzDcldTe0ZOKH1OLjTTYSr1PnWLUaeRQ-Ya3377D" alt="Pasha bank logo"></div>
+        <div class="logo-img"><img src="https://www.pashabank.ge/m/i/downloads/logo-en-horizontal.png"
+                alt="Pasha bank logo"></div>
     </header>
     <main>
         <section class="info">
             <h2>Рассчёт вклада</h2>
             <div class="info-section">
                 <label for="first-amoun">Начальная сумма вклада (&#8381;)</label>
-                <input type="text" id="first-amoun"><br>
+                <input type="text" id="first-amoun" placeholder="Пример: 1000"><br>
             </div>
             <div class="info-section">
-                <label for="mounthly-amount">Сумма ежемесячного пополнения (&#8381;)</label>
-                <input type="text" id="mounthly-amount"><br>
+                <label for="mounthly-amount">Сумма
+                    <select id="type-replenishment">
+                        <option value="mounthly">ежемесячного</option>
+                        <option value="quarterly">ежеквартального</option>
+                        <option value="annually">ежегодного</option>
+                    </select>
+                 пополнения (&#8381;)</label>
+                <input type="text" id="mounthly-amount" placeholder="Пример: 100"><br>
             </div>
             <div class="info-section">
                 <label for="percent">Процентная ставка (%)</label>
-                <input type="text" id="percent"><br>
+                <input type="text" id="percent" placeholder="Пример: 10"><br>
             </div>
             <div class="info-section">
                 <label for="days">Срок вклада (дней)</label>
-                <input type="text" id="days"><br>
+                <input type="text" id="days" placeholder="Пример: 360"><br>
             </div>
 
             <button id="action">Расчитать</button>

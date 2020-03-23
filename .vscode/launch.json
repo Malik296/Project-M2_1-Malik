@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Bootcamp/clone%20test/Project-M2_1-Malik/index.html",
+            "url": "file:///C:/Users/Acer/Desktop/Git/Project-M2_1-Malik/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

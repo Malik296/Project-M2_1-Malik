@@ -13,6 +13,7 @@ function callFunction() {
     let mounthAmount = correctInmput(+document.getElementById('mounthly-amount').value);
     let percent = correctPercent(+document.getElementById('percent').value);
     let days = correctDay(+document.getElementById('days').value);
+    let typeReplenishment = document.getElementById('type-replenishment').value;
 
     if (isNaN(firstAmount)) {
         alertErrorMesage('Не корректная начальная сумма!');
@@ -24,7 +25,7 @@ function callFunction() {
         alertErrorMesage('Не корректный  срок вклада!');
     } else {
         closeErrorAlert();
-        alert(`Ваш финальный счет: \n ${alertResult(firstAmount, mounthAmount, percent, days).toFixed(2)} `)
+        alert(`Ваш финальный счет: \n ${alertResult(firstAmount, mounthAmount, percent, days, typeReplenishment).toFixed(2)} `)
     }
 
     console.log(days);
@@ -42,12 +43,22 @@ function alertErrorMesage(mesage) {
     document.getElementById('alert').style.display = "block";
 }
 
-function alertResult(firstAmount, mounthAmount, percent, days) {
+function alertResult(firstAmount, mounthAmount, percent, days, typeReplenishment) {
+    let period = 0;
+    if (typeReplenishment == 'mounthly') {
+        period = 1;
+    } else if (typeReplenishment == 'quarterly') {
+        period = 3;
+    } else {
+        period = 12;
+    }
     let result = firstAmount;
 
     for (let i = 0; i < Math.trunc( days / 30); i++) {
         result *= (1 + (percent * 30) / (100 * 360));
-        result += mounthAmount;
+        if ((i + 1) % period == 0) {
+            result += mounthAmount;
+        }
     }
     return result;
 }
